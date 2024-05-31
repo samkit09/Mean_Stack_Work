@@ -55,25 +55,23 @@
     margin-top: 2px;
     color: #0f1419;
     font-family: sans-serif;
-    font-size: 15px;     
+    font-size: 15px;
 }
 .action-row {
     margin-top: 12px;
     max-width: 425px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     /* Equal spacing between each action */
 }
-svg, g{
-    /* display: inline; */
-}
+
 .icon {
     color: #536471;
     size: 16px;
-    /* Vertically centered with the count */
 }
+
 .action-count {
     color: #536471;
     font-size: 13px ;
+    float: left;
 }
