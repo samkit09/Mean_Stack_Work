@@ -61,17 +61,24 @@
     margin-top: 12px;
     max-width: 425px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     /* Equal spacing between each action */
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    color: #536471;
 }
 
 .icon {
     color: #536471;
     size: 16px;
+    margin-right: 12px;
 }
 
 .action-count {
     color: #536471;
     font-size: 13px ;
-    float: left;
 }
