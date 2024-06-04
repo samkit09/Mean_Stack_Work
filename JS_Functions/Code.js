@@ -1,5 +1,6 @@
 // Input array for testing
 const arr = [2,5,9,7,8,1,3,4,0]
+// const arr = [0,1,2,3,4,5,6,7,8,9]
 console.log("Testing array = ", arr, '\n');
 /*
 1. Filter 
@@ -90,21 +91,21 @@ console.log('Builtin  - ',arr.reduce(rd));
 */
 console.log('\n6. Slice function ->');
 function sliceFunc(arr, beg, end) {
-  // console
+  // console.log('e-  ',end);
   if ( beg < 0 ) { beg = arr.length + beg; }
   if ( end < 0 ) { end = arr.length + end; }
-  if ( typeof(end) != "undefined" ) { end = arr.length; }
+  if ( typeof(end) == "undefined" ) { end = arr.length; }
   let ans = [];
   // console.log(beg, end);
   if ( beg > arr.length || beg > end ) { return ans; }
-  for( let i = beg; i < end; i++ ) {
+  for( let i = beg; i < end && i < arr.length; i++ ) {
     ans.push(arr[i]);
   }
   return ans;
 }
 // test
-let beg = 5;
-let end = 0;
+let beg = 3;
+let end = 6;
 console.log('MySlice  - ',sliceFunc(arr, beg, end)); 
 console.log('Builtin  - ',arr.slice(beg, end));
 /*
@@ -113,18 +114,23 @@ console.log('Builtin  - ',arr.slice(beg, end));
 console.log('\n7. Splice function ->');
 function spliceFunc(arr,st,dc,...item) {
   if ( st < 0 ) { st = arr.length + st; }
-  let ans = [];
-  for( let i = 1 ; i < arr.length; i++ ){
-    if ( i === st ) {
-      ans.push(...items);
-    }
-    ans.push(arr[i]);
+  if (st >= arr.length) {
+    st = arr.length;
   }
-  return ans;
+  if (dc === undefined) {
+    dc = arr.length - st;
+  }
+  dc = Math.max(0,Math.min(dc, arr.length - st));
+  let ans = [];
+  ans = sliceFunc(arr, 0, st);
+  ans.push(...items);
+  ans.push(...sliceFunc(arr, st+dc));
+  console.log('Modified arr  => ', ans);
+  return sliceFunc(arr,st,st+dc);
 }
 // test
-let start = 2;
-let deleteCount = 0;
+let start = 7;
+let deleteCount = 1;
 const items = [3];
 console.log('MySplice  - ',spliceFunc(arr, start, deleteCount, ...items)); 
-console.log('Builtin  - ',arr.splice(start, deleteCount, ...items));
+console.log('Builtin  - ',arr.splice(start, deleteCount, ...items), arr);
