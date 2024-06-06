@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta name="author" content="Samkit Saraf">
         <title>2 Do List</title>
         <link rel="stylesheet" href="./style.css">
         <script src="./index.js" async defer></script>
@@ -10,14 +12,14 @@
         
         <header>
             <p> My To Do List </p>
-            <input type="text" placeholder="Title...">
+            <input id="inp" type="text" placeholder="Title...">
             <span class="btn" onclick="addElem()">Add</span>
         </header>
         
         <ul id="list">
-            <li> Wake up </li>
-            <li class="checked"> Debug the code </li>
-            <li> Sleep </li>
+            <!-- <li> Wake up <span class="close">&#215;</span></li>
+            <li class="checked"> Debug the code <span class="close">&#215;</span></li>
+            <li> Sleep <span class="close">&#215;</span> </li> -->
         </ul>
         
     </body>
