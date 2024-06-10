@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main {
+    width: 500px;
+    text-align: left;
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label, input{
+    margin: 5px;
+}
